@@ -16,10 +16,8 @@ public class LoginDaoImpl implements LoginDao {
 	@Override
 	public int loginUser(loginBo bo) {
 		int count=0;
-		count=jt.queryForObject(CHECKUSER,Integer.class, bo.getUsername(), bo.getPassword());
-	
-		
-	
+		count=jt.queryForObject(CHECKUSER,Integer.class, bo.getUsername(), bo.getPassword());	
+		System.out.println("dao ==== "+count);
 		return count;
 	}
 
