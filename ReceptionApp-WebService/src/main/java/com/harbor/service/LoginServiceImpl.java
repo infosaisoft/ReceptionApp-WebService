@@ -19,7 +19,8 @@ public class LoginServiceImpl implements LoginService {
       loginBo bo=null;
       int count=0;
       //copy bo to dto
-      BeanUtils.copyProperties(bo, dto);
+      bo=new loginBo();
+      BeanUtils.copyProperties(dto, bo);
       count=dao.loginUser(bo);
       
       if(count==0) {
