@@ -9,7 +9,7 @@ import com.harbor.bo.loginBo;
 @Repository
 public class LoginDaoImpl implements LoginDao {
 
-	private static final String CHECKUSER="SELECT COUNT(*) FROM hospital_admin WHERE username=? AND password=? AND role='reception' "; 
+	private static final String CHECKUSER="SELECT COUNT(*) FROM hospital_admin WHERE username=? AND password=? and role='reception' "; 
 	
 	@Autowired
 	JdbcTemplate jt;
