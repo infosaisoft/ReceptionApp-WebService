@@ -37,8 +37,10 @@ public class LoginController {
 		HttpHeaders header = new HttpHeaders();
 		header.add("username", dto.getUsername());
 		if (result.equals("fail")) {
+			System.out.println(new ResponseEntity<String>(header, HttpStatus.UNAUTHORIZED));
 			return new ResponseEntity<String>(header, HttpStatus.UNAUTHORIZED);
 		}
+		System.out.println(new  ResponseEntity<String>(header, HttpStatus.OK));
 		return new ResponseEntity<String>(header, HttpStatus.OK);
 
 	}
