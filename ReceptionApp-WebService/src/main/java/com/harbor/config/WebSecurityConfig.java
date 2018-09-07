@@ -27,8 +27,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	        .antMatchers("/users").authenticated();
 
 	    JwtWebSecurityConfigurer
-	        .forRS256(audience, issuer)
-	        .configure(http);
+	        .forRS256(audience, issuer).configure(http);
 	  }
 
 }
