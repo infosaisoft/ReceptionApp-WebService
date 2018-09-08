@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.sql.Time;
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class AppointmentsDto implements Serializable{
 	
 	
@@ -12,6 +14,8 @@ public class AppointmentsDto implements Serializable{
 	private String patient_name;
 	private String contact;
 	private String time;
+	
+	@JsonFormat(pattern="dd-MM-yyyy")
 	private Date date;
 	
 	
