@@ -3,6 +3,8 @@ package com.harbor.dto;
 import java.io.Serializable;
 import java.util.Date;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class PatientDto implements Serializable{
 	
 	private String patient_id;
@@ -15,7 +17,8 @@ public class PatientDto implements Serializable{
 	private String zip;
 	private String gender;
 	private String age;
-	private String photo;
+	private MultipartFile photo;
+	private String photo_name;
 	private String email;
 	private Date creation_date;
 	
@@ -80,11 +83,18 @@ public class PatientDto implements Serializable{
 	public void setAge(String age) {
 		this.age = age;
 	}
-	public String getPhoto() {
+	
+	public MultipartFile getPhoto() {
 		return photo;
 	}
-	public void setPhoto(String photo) {
+	public void setPhoto(MultipartFile photo) {
 		this.photo = photo;
+	}
+	public String getPhoto_name() {
+		return photo_name;
+	}
+	public void setPhoto_name(String photo_name) {
+		this.photo_name = photo_name;
 	}
 	public String getEmail() {
 		return email;
