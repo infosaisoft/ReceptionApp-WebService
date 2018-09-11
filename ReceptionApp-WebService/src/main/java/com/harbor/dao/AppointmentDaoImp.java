@@ -19,7 +19,7 @@ public class AppointmentDaoImp implements AppointmentDao {
 
 	private static final String INSERT_QUERY = "INSERT INTO appointments VALUES(?,?,?,?,?,?)"; 
 
-	private static final String GET_ALL_QUERY = "SELECT app_id,hid,patient_name,contact,time,date FROM appointments upper (WHER HID=? AND DATE=?) order by date";
+	private static final String GET_ALL_QUERY = "SELECT app_id,hid,patient_name,contact,time,date FROM appointments WHERE HID=? AND DATE=?";
 
 	@Autowired
 	JdbcTemplate jt;
