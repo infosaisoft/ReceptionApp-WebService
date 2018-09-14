@@ -12,8 +12,7 @@ public class AppointmentsBo {
 	private String contact;
 	private String time;
 	private Date date;
-	
-	
+	private int status;
 	
 	
 	public String getApp_id() {
@@ -52,10 +51,14 @@ public class AppointmentsBo {
 	}
 	public void setDate(Date date) {
 		this.date = date;
+	}	
+	
+	public int getStatus() {
+		return status;
 	}
-	
-	
-	
+	public void setStatus(int status) {
+		this.status = status;
+	}
 	
 	
 }

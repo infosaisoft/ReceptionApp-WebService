@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.sql.Time;
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class AppointmentsDto implements Serializable{
 	
 	
@@ -12,8 +14,10 @@ public class AppointmentsDto implements Serializable{
 	private String patient_name;
 	private String contact;
 	private String time;
-	private Date date;
 	
+	@JsonFormat(pattern="dd-MM-yyyy")
+	private Date date;
+	private int status;
 	
 	
 	public String getApp_id() {
@@ -52,9 +56,13 @@ public class AppointmentsDto implements Serializable{
 	}
 	public void setDate(Date date) {
 		this.date = date;
+	}	
+	
+	public int getStatus() {
+		return status;
 	}
-	
-	
-	
+	public void setStatus(int status) {
+		this.status = status;
+	}
 
 }
