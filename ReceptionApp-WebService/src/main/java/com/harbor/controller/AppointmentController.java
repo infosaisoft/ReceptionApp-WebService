@@ -1,5 +1,6 @@
 package com.harbor.controller;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -50,11 +51,13 @@ public class AppointmentController {
 	
 	
 
+	@CrossOrigin("*")
 	@GetMapping(value="appointment")
-/*	@RequestMapping(value = "appointment", method = RequestMethod.GET, consumes = "application/JSON" ,produces="application/JSON")*/
-	public List<AppointmentsDto> displayAllRecord(@RequestParam("hid") String hid,@RequestParam("date") @DateTimeFormat(pattern="dd-MM-yyyy") Date date, Map<String,Object>map){
+	public List<AppointmentsDto> displayAllRecord(@RequestParam("hid") String hid,@RequestParam("appdate") @DateTimeFormat(pattern="dd-MM-yyyy") String date1, Map<String,Object>map) throws ParseException{
 		List<AppointmentsDto>listdto=null;
-    
+     
+		
+		Date date=new SimpleDateFormat("yyyy-MM-dd").parse(date1);
 		System.out.println("date:::::::::"+date);
 		//use serice
 		listdto=appservice.getAllRecord(hid, date);

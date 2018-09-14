@@ -14,6 +14,9 @@ public class AppointmentsDto implements Serializable{
 	private String patient_name;
 	private String contact;
 	private String time;
+	private int status;
+	
+	
 	
 	@JsonFormat(pattern="dd-MM-yyyy")
 	private Date date;
@@ -56,6 +59,12 @@ public class AppointmentsDto implements Serializable{
 	}
 	public void setDate(Date date) {
 		this.date = date;
+	}
+	public int getStatus() {
+		return status;
+	}
+	public void setStatus(int status) {
+		this.status = status;
 	}
 	
 	

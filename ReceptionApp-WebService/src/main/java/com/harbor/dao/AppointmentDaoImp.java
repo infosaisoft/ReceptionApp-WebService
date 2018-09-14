@@ -17,9 +17,9 @@ import com.harbor.bo.AppointmentsBo;
 @Repository
 public class AppointmentDaoImp implements AppointmentDao {
 
-	private static final String INSERT_QUERY = "INSERT INTO appointments VALUES(?,?,?,?,?,?)"; 
+	private static final String INSERT_QUERY = "INSERT INTO appointments (app_id,hid,patient_name,contact,time,appointment_date,status) VALUES (?,?,?,?,?,?,?)"; 
 
-	private static final String GET_ALL_QUERY = "SELECT app_id,hid,patient_name,contact,time,date FROM appointments WHERE HID=? AND DATE=?";
+	private static final String GET_ALL_QUERY = "SELECT app_id,hid,patient_name,contact,time,appointment_date FROM appointments WHERE hid=? AND appointment_date=?";
 
 	@Autowired
 	JdbcTemplate jt;
@@ -28,7 +28,7 @@ public class AppointmentDaoImp implements AppointmentDao {
 	public int insertAppintment(AppointmentsBo abo) {
 		int count = 0;
 		count = jt.update(INSERT_QUERY, abo.getApp_id(), abo.getHid(), abo.getPatient_name(), abo.getContact(),
-				abo.getTime(), new Date());
+				abo.getTime(), new Date(),abo.getStatus());
 
 		return count;
 	}
