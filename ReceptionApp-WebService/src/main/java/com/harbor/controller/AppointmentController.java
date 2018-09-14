@@ -45,9 +45,10 @@ public class AppointmentController {
 			return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
 		}
 		
-		return new ResponseEntity<String>(HttpStatus.OK);
+		return new ResponseEntity<String>(result, HttpStatus.OK);
 	}
 	
+
 	
 	@CrossOrigin("*")
 	@GetMapping(value="appointment")

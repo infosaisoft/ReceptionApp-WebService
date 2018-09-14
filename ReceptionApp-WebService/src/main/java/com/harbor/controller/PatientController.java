@@ -94,8 +94,6 @@ public class PatientController {
 			
 		}
 
-
-		System.out.println("patient name:::::::" + pdto.getName());
 		pdto.setPhoto_name(filename);
 		result = pservice.registration(pdto);
 		
