@@ -17,8 +17,8 @@ public class PatientDto implements Serializable{
 	private String zip;
 	private String gender;
 	private String age;
-	private MultipartFile photo;
-	private String photo_name;
+	//private MultipartFile photo;
+	//private String photo_name;
 	private String email;
 	private Date creation_date;
 	
@@ -84,7 +84,7 @@ public class PatientDto implements Serializable{
 		this.age = age;
 	}
 	
-	public MultipartFile getPhoto() {
+	/*public MultipartFile getPhoto() {
 		return photo;
 	}
 	public void setPhoto(MultipartFile photo) {
@@ -95,7 +95,7 @@ public class PatientDto implements Serializable{
 	}
 	public void setPhoto_name(String photo_name) {
 		this.photo_name = photo_name;
-	}
+	}*/
 	public String getEmail() {
 		return email;
 	}

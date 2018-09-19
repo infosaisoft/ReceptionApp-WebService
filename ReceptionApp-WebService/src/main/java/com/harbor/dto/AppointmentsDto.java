@@ -2,6 +2,7 @@ package com.harbor.dto;
 
 import java.io.Serializable;
 import java.sql.Time;
+import java.time.LocalDate;
 import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -16,12 +17,19 @@ public class AppointmentsDto implements Serializable{
 	private String time;
 	
 	@JsonFormat(pattern="dd-MM-yyyy")
-	private Date date;
+	private Date date1;
+	private String date;
 	private int status;
 	
 	
 	public String getApp_id() {
 		return app_id;
+	}
+	public String getDate() {
+		return date;
+	}
+	public void setDate(String date) {
+		this.date = date;
 	}
 	public void setApp_id(String app_id) {
 		this.app_id = app_id;
@@ -51,13 +59,13 @@ public class AppointmentsDto implements Serializable{
 	public void setTime(String time) {
 		this.time = time;
 	}
-	public Date getDate() {
-		return date;
+		
+	public Date getDate1() {
+		return date1;
 	}
-	public void setDate(Date date) {
-		this.date = date;
-	}	
-	
+	public void setDate1(Date date1) {
+		this.date1 = date1;
+	}
 	public int getStatus() {
 		return status;
 	}

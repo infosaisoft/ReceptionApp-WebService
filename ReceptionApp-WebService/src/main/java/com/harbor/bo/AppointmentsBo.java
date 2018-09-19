@@ -1,6 +1,7 @@
 package com.harbor.bo;
 
 import java.sql.Time;
+import java.time.LocalDate;
 import java.util.Date;
 
 
@@ -11,7 +12,7 @@ public class AppointmentsBo {
 	private String patient_name;
 	private String contact;
 	private String time;
-	private Date date;
+	private Date date1;
 	private int status;
 
 	public String getApp_id() {
@@ -45,11 +46,11 @@ public class AppointmentsBo {
 	public void setTime(String time) {
 		this.time = time;
 	}
-	public Date getDate() {
-		return date;
+	public Date getDate1() {
+		return date1;
 	}
-	public void setDate(Date date) {
-		this.date = date;
+	public void setDate1(Date date1) {
+		this.date1 = date1;
 	}	
 		
 	public int getStatus() {

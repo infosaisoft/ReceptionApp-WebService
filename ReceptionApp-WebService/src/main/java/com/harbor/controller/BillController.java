@@ -8,6 +8,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -26,6 +27,7 @@ public class BillController {
 	@Autowired
 	BillService billservice;
 	
+	@CrossOrigin("*")
 	@RequestMapping(value="bill",method=RequestMethod.POST,consumes="application/JSON")
 	public ResponseEntity<?> registrationSubBill( @RequestBody MainBillBo mdto){
 		String result=null;
@@ -39,7 +41,7 @@ public class BillController {
 		return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 	
-	
+	@CrossOrigin("*")
 	@GetMapping("viewbill")
 	public List<MainBillDto> displayAllBill(@RequestParam(value="hid",defaultValue="hid1",required=true) String hid,Map<String,Object>map){
 		List<MainBillDto>listdto=null;
@@ -52,6 +54,7 @@ public class BillController {
 		return listdto;
 	}
 	
+	@CrossOrigin("*")
 	@GetMapping("viewbillbyid")
 	public MainBillDto displayBillById(@RequestParam(value="bill_id",defaultValue="BID-6906971351") String bill_id,Map<String,Object>map) {
 		MainBillDto dto=null;

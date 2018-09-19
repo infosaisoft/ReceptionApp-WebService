@@ -2,6 +2,7 @@ package com.harbor.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -31,7 +32,7 @@ public class AppointmentDaoImp implements AppointmentDao {
 		int count = 0;
 		count = jt.update(INSERT_QUERY, abo.getApp_id(), abo.getHid(), abo.getPatient_name(), abo.getContact(),
 
-		abo.getTime(), new Date(),abo.getStatus());
+		abo.getTime(), abo.getDate1() ,abo.getStatus());
 
 		return count;
 	}
@@ -55,7 +56,7 @@ public class AppointmentDaoImp implements AppointmentDao {
 					abo.setPatient_name(rs.getString(3));
 					abo.setContact(rs.getString(4));
 					abo.setTime(rs.getString(5));
-					abo.setDate(rs.getDate(6));
+					abo.setDate1(rs.getDate(6));
 					listbo.add(abo);
 
 				}

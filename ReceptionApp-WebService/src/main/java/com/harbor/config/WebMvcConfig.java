@@ -14,7 +14,6 @@ public class WebMvcConfig {
 	@Bean(name="multipartResolver")
 	public CommonsMultipartResolver CMRUupload() {
 		CommonsMultipartResolver cmr=null;
-	
 		cmr=new CommonsMultipartResolver();
 		cmr.setMaxUploadSize(2000000);	
 		return cmr;

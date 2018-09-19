@@ -33,12 +33,12 @@ public class PatientController {
 	PatientService pservice;
 	@CrossOrigin("*")
 	@RequestMapping(value = "registration", method = RequestMethod.POST, consumes = "application/JSON")
-	public ResponseEntity<?> registration(@RequestBody PatientDto pdto, BindingResult erros, Map<String, Object> map)
+	public ResponseEntity<?> registration(@RequestBody PatientDto pdto, BindingResult erros, Map<String, Object> map,MultipartFile file)
 			throws Exception {
 		String result = null;
 		String filename = null;
-		MultipartFile file = null;
-		OutputStream os = null;
+	//	MultipartFile file = null;
+		/*OutputStream os = null;
 		InputStream is = null;
 		// get upload file name
 		file = pdto.getPhoto();
@@ -94,13 +94,11 @@ public class PatientController {
 			
 		}
 
-		pdto.setPhoto_name(filename);
+		pdto.setPhoto_name(filename);*/
 		result = pservice.registration(pdto);
 		
 		HttpHeaders header = new HttpHeaders();
 		
-		System.out.println("patient name:::::::"+pdto.getName());
-			result=pservice.registration(pdto);
 			/*List<ObjectError>e	=	error.getAllErrors();
 			ApiError errors=new ApiError(HttpStatus.INTERNAL_SERVER_ERROR, " unquie elements",error.toString());
 			map.put("erros", errors);*/
